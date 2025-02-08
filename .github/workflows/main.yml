@@ -2,7 +2,7 @@ name: Daily Run
 
 on:
   schedule:
-    - cron: '25 3 * * *'  # Runs at midnight UTC daily
+    - cron: '10 3 * * *'  # Runs at 3:10 AM UTC daily
 
 jobs:
   run-script:
@@ -14,10 +14,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'  # Replace with your version
+          python-version: '3.x'  # Use your preferred version
 
       - name: Install dependencies
-        run: pip install -r requirements.txt  # Remove this if no dependencies
+        run: pip install -r requirements.txt  # Remove this line if you have no dependencies
 
       - name: Run script
-        run: python praw.py  # Replace with your script name
+        run: python finalbot.py  # Updated to match your filename
