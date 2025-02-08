@@ -2,7 +2,7 @@ name: Daily Run
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs at midnight UTC daily
+    - cron: '13 3 * * *'  # Runs at midnight UTC daily
 
 jobs:
   run-script:
