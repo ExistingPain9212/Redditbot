@@ -1,0 +1,23 @@
+name: Daily Run
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs at midnight UTC daily
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  # Replace with your version
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # Remove this if no dependencies
+
+      - name: Run script
+        run: python praw.py  # Replace with your script name
